@@ -1,0 +1,9 @@
+{% if all_chemicals %}
+    <ul>
+        {% for chem in all_chemicals %}
+        <li><a href="/therm/{{ chem.id }}/"> {{ chem.name }} </a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3> No Chemicals </h3>
+{% endif %}

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://localhost/~josh/jsantz/Sources/js/jquery2.1.4.js"></script>
+        <script type="text/javascript" src="http://localhost/~josh/jsantz/Sources/js/JsLib.js" ></script>
+        
+        <style>
+            html, body {
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        .banner{
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+            color: white;
+            background-color: black;
+        }
+        </style>
+    </head>
+    <body>
+
+        <!--
+         Containing the Universal methods for the main header on each page.
+         -->
+        <div id="universallogo" style="background-color:#000000; opacity:0.7 ; height:40px; width:9%; float:left; position:relative; z-index:500"></div>
+        <div id="universalheader" style="background-color:#000000; opacity:0.7 ; height:40px; width:90%; float:left; position:relative; z-index:500; text-align:right"></div>
+        <!--script type="text/javascript" src="http://localhost/~josh/jsantz/Sources/universalheader.js"></script-->
+        <div id="bodydiv"></div><div id="bodyover"></div>
+{% if error_message %}
+	<p><strong> {{error_message}} </strong></p>      
+{% endif %}
+        <h1 style="text-align:center;"> Thermodynamics</h1>
+<form action="{% url 'therm:computetherm' %}" method="post" Style="text-align:center;">
+	{% csrf_token %}
+	<input type="text" id="inputstring" name="inputstring" value="{{ inputmsg }}" Style="width:800px;"><br>
+</form>
+<script type="text/javascript" src="http://localhost/~josh/jsantz/thetechnicalshedjs/index.js"></script>
+        <div id="response" style="width:100%; overflow:scroll;">
+        {% autoescape off %}
+        {{ response }}
+        {% endautoescape %}
+        </div>
+    </body>
+</html>

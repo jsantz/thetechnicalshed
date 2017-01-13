@@ -1,0 +1,6 @@
+Protected Key Words!!!,Front Delimeter,End Delimeter,Arg Delimeter,Case Number,Developer Notes (field does not find its way into the algorithm),module
+CASRN=,apo,apo,-,1,"Note: If apo, it will be replaced with ""'"" (apostraphe) in parsing this file.",acentric
+LK_omega,{,},",",2,,acentric
+omega,{,},none,3,Note: none denotes no delimeters,acentric
+omega_mixture,{,},",",4,,acentric
+StielPolar,{,},",",5,,acentric
